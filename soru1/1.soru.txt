@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int linearSearch(int dizi[], int boyut, int aranan) {
+    for (int i = 0; i < boyut; i++) {
+        if (dizi[i] == aranan) {
+            return i; // Elemanın indeksini döndür
+        }
+    }
+    return -1; // Eleman bulunamazsa -1 döndür
+}
+
+int main() {
+    int boyut;
+    printf("Dizinin boyutunu girin: ");
+    scanf("%d", &boyut);
+
+    int dizi[boyut];
+    printf("Dizinin elemanlarını girin:\n");
+    for (int i = 0; i < boyut; i++) {
+        printf("Eleman %d: ", i + 1);
+        scanf("%d", &dizi[i]);
+    }
+
+    int aranan;
+    printf("Aranacak elemanı girin: ");
+    scanf("%d", &aranan);
+
+    int sonuc = linearSearch(dizi, boyut, aranan);
+
+    if (sonuc == -1) {
+        printf("Eleman bulunamadi.\n");
+    } else {
+        printf("Eleman %d. indiste bulundu.\n", sonuc);
+    }
+
+    return 0;
+}
